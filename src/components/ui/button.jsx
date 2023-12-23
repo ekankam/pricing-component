@@ -9,7 +9,7 @@ export default function Button({ type = "primary" }) {
       styles = "primary";
       break;
     case "secondary":
-      styles = "secondary mb-[54px]";
+      styles = "secondary";
       break;
     default:
       styles;
@@ -18,7 +18,7 @@ export default function Button({ type = "primary" }) {
   return (
     <button
       className={clsx(
-        "w-full h-11 rounded-md flex-shrink-0 text-[13px] text-center uppercase tracking-[1.393px] mt-8",
+        "w-full h-11 rounded-md flex-shrink-0 text-[13px] text-center uppercase tracking-[1.393px] my-8",
         styles
       )}
     >

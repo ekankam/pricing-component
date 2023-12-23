@@ -35,9 +35,22 @@ Price.propTypes = {
   className: PropTypes.string,
 };
 
-function Item({ item }) {
+function Item({ item, type = "primary" }) {
+  let styles;
+
+  switch (type) {
+    case "primary":
+      styles = "border-gray-400/20";
+      break;
+    case "secondary":
+      styles = "border-white/20";
+      break;
+    default:
+      styles;
+      break;
+  }
   return (
-    <li className="text-[15px] py-3 border-t border-brand-grey-blue-200/20 last:border-b">
+    <li className={clsx("text-[15px] py-3 border-t last:border-b", styles)}>
       {item}
     </li>
   );
@@ -45,6 +58,7 @@ function Item({ item }) {
 
 Item.propTypes = {
   item: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export default function Pricing() {
@@ -71,7 +85,7 @@ export default function Pricing() {
         </div>
       </header>
       <div className="flex flex-col items-center justify-center w-full gap-8 mx-auto lg:flex-row px-9 lg:px-0 lg:gap-0 text-brand-grey-blue-300">
-        <Card className="rounded-[10px] lg:rounded-tr-none lg:rounded-br-none">
+        <Card className="rounded-[10px] lg:rounded-tr-none lg:rounded-br-none h-[453px]">
           <Header header="Basic" />
           <Price price={basic.price} />
           <ul>
@@ -81,17 +95,17 @@ export default function Pricing() {
           </ul>
           <Button />
         </Card>
-        <Card className="rounded-[10px] brand-gradient text-white h-full">
-          <Header header="Professional" className="lg:mt-[54px]" />
+        <Card className="rounded-[10px] brand-gradient text-white h-[453px] lg:h-[500px]">
+          <Header header="Professional" className="lg:mt-6" />
           <Price price={professional.price} className="text-white" />
           <ul>
-            <Item item={professional.storage} />
-            <Item item={professional.users} />
-            <Item item={professional.send} />
+            <Item item={professional.storage} type="secondary" />
+            <Item item={professional.users} type="secondary" />
+            <Item item={professional.send} type="secondary" />
           </ul>
           <Button type="secondary" />
         </Card>
-        <Card className="rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none mb-[71px] lg:mb-0">
+        <Card className="rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none mb-[71px] lg:mb-0 h-[453px]">
           <Header header="Master" />
           <Price price={master.price} />
           <ul>
