@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ff: "Montserrat", sans-serif;
+  --fz: 15px;
+  --fw: 700;
+  --brand-gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+  --brand-grey-blue-100: hsl(240, 78%, 98%);
+  --brand-grey-blue-200: hsl(234, 14%, 74%);
+  --brand-grey-blue-300: hsl(233, 13%, 49%);
+  --brand-grey-blue-400: hsl(232, 13%, 33%);
+}
+
+:root,
+html,
+body {
+  min-height: 100%;
+  font-family: var(--ff) !important;
+  font-size: var(--fz);
+  font-weight: var(--fw);
+  background-color: var(--brand-grey-blue-100);
+  overflow: hidden;
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #a2a7f0 -0.05%, #696edd 100.05%);
+}
