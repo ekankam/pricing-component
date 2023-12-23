@@ -1,11 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+
 import Layout from "../layout/layout";
 import Switch from "../ui/switch";
-import { SUBSCRIPTION } from "../../data/price-options";
 import Card from "../ui/card";
 import Button from "../ui/button";
+import { SUBSCRIPTION } from "../../data/price-options";
 
 function Header({ header, className }) {
   return <p className={clsx("mb-6 text-lg", className)}>{header}</p>;
