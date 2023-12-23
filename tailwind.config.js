@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "brand-purple": "var(--brand-purple)",
         "brand-gradient": "var(--brand-gradient)",
         "brand-grey-blue-100": "var(--brand-grey-blue-100)",
         "brand-grey-blue-200": "var(--brand-grey-blue-200)",
